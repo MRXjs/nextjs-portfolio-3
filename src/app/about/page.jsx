@@ -6,6 +6,7 @@ import profilePic from "@/public/images/profile/developer-pic-2.jpg";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
+import Education from "@/components/Education";
 
 const descriptions = [
   {
@@ -61,7 +62,7 @@ const AnimatedNumbers = ({ value }) => {
   return <span ref={ref}></span>;
 };
 
-const page = () => {
+const About = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full pt-16">
       <AnimatedText text="Passion Fuels Purpose! " className="mb-16" />
@@ -101,8 +102,9 @@ const page = () => {
       </div>
       <Skills />
       <Experience />
+      <Education />
     </div>
   );
 };
 
-export default page;
+export default About;
