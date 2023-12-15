@@ -64,11 +64,11 @@ const AnimatedNumbers = ({ value }) => {
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full pt-16">
+    <div className="flex flex-col items-center justify-center w-full pt-16 dark:text-light">
       <AnimatedText text="Passion Fuels Purpose! " className="mb-16" />
       <div className="grid w-full grid-cols-8 gap-16">
         <div className="flex flex-col items-start justify-start col-span-3">
-          <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
+          <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
             Biography
           </h2>
           {descriptions.map((item, index) => (
@@ -78,8 +78,8 @@ const About = () => {
           ))}
         </div>
 
-        <div className="relative col-span-3 p-8 border-2 border-solid rounded-2xl h-max border-dark bg-light">
-          <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
+        <div className="relative col-span-3 p-8 border-2 border-solid rounded-2xl h-max border-dark bg-light dark:bg-dark dark:border-light">
+          <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-white" />
           <Image
             src={profilePic}
             alt=""
@@ -93,7 +93,7 @@ const About = () => {
               <span className="inline-block font-bold text-7xl">
                 <AnimatedNumbers value={item.count} />+
               </span>
-              <h2 className="text-xl font-medium capitalize text-dark/75">
+              <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
                 {item.text}
               </h2>
             </div>

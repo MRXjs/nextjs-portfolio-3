@@ -9,7 +9,7 @@ import lightBulb from "@/public/images/svgs/miscellaneous_icons_1.svg";
 export default function Home() {
   return (
     <div>
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full dark:text-light">
         <div className="w-1/2">
           <Image src={profilePic} alt="sampleName" className="w-full h-auto" />
         </div>
@@ -28,7 +28,7 @@ export default function Home() {
               href="/dummy.pdf"
               target="_blank"
               download={true}
-              className="flex items-center p-2 px-6 text-lg font-semibold border-2 border-transparent border-solid rounded-lg bg-dark text-light hover:bg-light hover:text-dark hover:border-dark"
+              className="flex items-center p-2 px-6 text-lg font-semibold border-2 border-transparent border-solid rounded-lg bg-dark text-light hover:bg-light hover:text-dark hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light"
             >
               Resume
               <LinkArrow className="w-6 ml-1" />
@@ -36,7 +36,7 @@ export default function Home() {
             <Link
               href="mailto:sureshmadawa763@gmail.com"
               target="_blank"
-              className="ml-4 text-lg font-medium underline capitalize text-dark"
+              className="ml-4 text-lg font-medium underline capitalize text-dark dark:text-light"
             >
               Contact
             </Link>

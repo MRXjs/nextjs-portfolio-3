@@ -23,7 +23,7 @@ const Skill = ({ name, x, y }) => {
       whileInView={{ x: x, y: y }}
       transition={{ duration: 1.5 }}
       viewport={{ once: true }}
-      className="absolute flex items-center justify-center px-6 py-3 font-semibold rounded-full cursor-pointer bg-dark text-light shadow-dark"
+      className="absolute flex items-center justify-center px-6 py-3 font-semibold rounded-full cursor-pointer bg-dark text-light shadow-dark dark:text-dark dark:bg-light"
     >
       {name}
     </motion.div>
@@ -34,7 +34,7 @@ const Skills = () => {
   return (
     <div className="w-full">
       <h2 className="w-full mt-64 font-bold text-center text-8xl">Skills</h2>
-      <div className="relative flex items-center justify-center w-full h-screen rounded-full bg-circularLight">
+      <div className="relative flex items-center justify-center w-full h-screen rounded-full bg-circularLight dark:bg-circularDark">
         {skillData.map((item, index) => (
           <Skill key={index} name={item.name} x={item.x} y={item.y} />
         ))}

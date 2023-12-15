@@ -3,11 +3,14 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full text-lg font-medium border-t-2 border-solid border-dark">
+    <footer className="w-full text-lg font-medium border-t-2 border-solid border-dark dark:text-light dark:border-light">
       <div className="flex items-center justify-between w-full p-32 py-8 ">
         <span>{new Date().getFullYear()} &copy; All Rights Reserved</span>
         <div className="flex items-center ">
-          Build With <span className="px-1 text-2xl text-primary">&#9825;</span>{" "}
+          Build With{" "}
+          <span className="px-1 text-2xl text-primary dark:text-primaryDark">
+            &#9825;
+          </span>{" "}
           by&nbsp;
           <Link
             href=""
