@@ -134,17 +134,19 @@ const Article = ({ img, title, date, link }) => {
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
-      className="flex items-center justify-between w-full p-4 py-6 my-4 border border-b-4 border-r-4 border-solid rounded-xl bg-light text-dark first:mt-0 border-dark"
+      className="flex items-center justify-between w-full p-4 py-6 my-4 border border-b-4 border-r-4 border-solid rounded-xl bg-light text-dark first:mt-0 border-dark dark:border-light dark:bg-dark dark:text-light"
     >
       <MovingImage title={title} img={img} link={link} />
-      <span className="pl-4 font-semibold text-primary">{date}</span>
+      <span className="pl-4 font-semibold text-primary dark:text-primaryDark">
+        {date}
+      </span>
     </motion.li>
   );
 };
 
 const FeaturedArticle = ({ img, title, time, summary, link }) => {
   return (
-    <li className="relative w-full col-span-1 p-4 border border-solid bg-light border-dark rounded-2xl">
+    <li className="relative w-full col-span-1 p-4 border border-solid bg-light border-dark rounded-2xl dark:bg-dark dark:border-light">
       <div className="absolute top-0 -right-4 -z-10 w-[100.5%] h-[105%] rounded-[2.5rem] bg-dark" />
       <Link
         href={link}
@@ -157,6 +159,8 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
           className="w-full h-auto "
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </Link>
       <Link href={link} target="_blank">
@@ -165,14 +169,16 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
         </h2>
       </Link>
       <p className="mb-2 text-sm ">{summary}</p>
-      <span className="font-semibold text-primary">{time}</span>
+      <span className="font-semibold text-primary dark:text-primaryDark">
+        {time}
+      </span>
     </li>
   );
 };
 
 const Articles = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full pt-16 mb-16 overflow-hidden">
+    <div className="flex flex-col items-center justify-center w-full pt-16 mb-16 overflow-hidden dark:text-light">
       <AnimatedText text={"Words Can Change The World! "} className="mb-16" />
       <ul className="grid w-full grid-cols-2 gap-16 p-5">
         {articleData.map((article, index) =>
