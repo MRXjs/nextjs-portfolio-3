@@ -122,7 +122,7 @@ const MovingImage = ({ title, img, link }) => {
         style={{ x: x, y: y }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
-        className="absolute z-10 hidden h-auto rounded-lg w-96"
+        className="absolute z-10 hidden h-auto rounded-lg w-96 md:!hidden"
       />
     </Link>
   );
@@ -134,10 +134,10 @@ const Article = ({ img, title, date, link }) => {
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
-      className="flex items-center justify-between w-full p-4 py-6 my-4 border border-b-4 border-r-4 border-solid rounded-xl bg-light text-dark first:mt-0 border-dark dark:border-light dark:bg-dark dark:text-light"
+      className="flex items-center justify-between w-full p-4 py-6 my-4 border border-b-4 border-r-4 border-solid rounded-xl bg-light text-dark first:mt-0 border-dark dark:border-light dark:bg-dark dark:text-light sm:flex-col"
     >
       <MovingImage title={title} img={img} link={link} />
-      <span className="pl-4 font-semibold text-primary dark:text-primaryDark">
+      <span className="pl-4 font-semibold text-primary dark:text-primaryDark sm:self-start sm:pl-0 xs:text-sm">
         {date}
       </span>
     </motion.li>
@@ -164,7 +164,7 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
         />
       </Link>
       <Link href={link} target="_blank">
-        <h2 className="my-2 mt-2 text-2xl font-bold capitalize hover:underline">
+        <h2 className="my-2 mt-2 text-2xl font-bold capitalize hover:underline xs:text-lg">
           {title}
         </h2>
       </Link>
@@ -179,8 +179,11 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
 const Articles = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full pt-16 mb-16 overflow-hidden dark:text-light">
-      <AnimatedText text={"Words Can Change The World! "} className="mb-16" />
-      <ul className="grid w-full grid-cols-2 gap-16 p-5">
+      <AnimatedText
+        text={"Words Can Change The World!"}
+        className="mb-16 lg:text-7xl sm:mb-8 sm:text-6xl xs:text-4xl"
+      />
+      <ul className="grid w-full grid-cols-2 gap-16 p-5 lg:gap-8 md:grid-cols-1 md:gap-y-16">
         {articleData.map((article, index) =>
           article.featuredArticle ? (
             <FeaturedArticle
